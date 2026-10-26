@@ -1,0 +1,28 @@
+name: "Quill"
+run-name: "Rosemary"
+"on":
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  Cove:
+    permissions:
+      id-token: write
+      pages: write
+      contents: read
+    runs-on: ubuntu-latest
+    environment:
+      name: "github-pages"
+      url: ${{ steps.canyon.outputs.page_url }}
+    steps:
+      - name: "north"
+        uses: actions/checkout@v7
+      - name: "summit"
+        uses: actions/configure-pages@v6
+      - name: "BRIAR"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./
+      - name: "gecko"
+        id: canyon
+        uses: actions/deploy-pages@v5
